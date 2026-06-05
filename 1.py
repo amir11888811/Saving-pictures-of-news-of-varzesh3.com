@@ -1,14 +1,15 @@
-#first-code
 from bs4 import BeautifulSoup
 import requests
-f1=open("links.txt","wt")
-w=requests.get("https://varzesh3.com")
-soup=BeautifulSoup(w.content)
-divs=soup.find_all("div","news-main-list")
-for div in divs:
-    links=div.find_all("a")
-    for link in links:
-        if "news" in link["href"]:
-            print(link["href"],"\n")
-            f1.write(link["href"]+"\n")
+f1=open("links.txt","wt",encoding="utf-8")
+r=requests.get("https://www.varzesh3.com")
+soup=BeautifulSoup(r.text, "html.parser")
+links=set()
+for a in soup.find_all("a",href=True):
+    href=a["href"]
+    if "/news/" in href:
+        if href.startswith("/"):
+            href = "https://www.varzesh3.com"+href
+        if href not in links:
+            links.add(href)
+            f1.write(href + "\n")
 f1.close()
