@@ -9,4 +9,4 @@ please name your files like me.
 - and you must install the library:`(pip install requests),(pip install bs4)`
 - then you must run first-code in Terminal `python 1.py`
 - and finally you must run second-code in terminal(it may rake a few minut).
-When the code is ran, check `pictures.txt`.
+When the code is ran, check `pictures.txt`. 
