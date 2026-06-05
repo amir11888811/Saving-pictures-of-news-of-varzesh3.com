@@ -12,4 +12,4 @@ for a in soup.find_all("a",href=True):
         if href not in links:
             links.add(href)
             f1.write(href + "\n")
-f1.close()
+f1.close() 
