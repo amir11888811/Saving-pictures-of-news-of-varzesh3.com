@@ -1,7 +1,7 @@
 #second-code
 from bs4 import BeautifulSoup
 import requests
-f1=open("links.txt","rt")
+f1=open("links.txt","rt", encoding="utf-8")
 links=f1.read().splitlines()
 f2=open("pictures.txt","wt")
 for link in links:
